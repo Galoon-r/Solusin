@@ -7,7 +7,10 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Setup SQLite Database
-const db = new Database(path.join(__dirname, 'data.sqlite'));
+const dbPath = process.env.VERCEL
+  ? path.join('/tmp', 'data.sqlite')
+  : path.join(__dirname, 'data.sqlite');
+const db = new Database(dbPath);
 
 // Create consultations table if not exists
 db.exec(`
@@ -85,6 +88,10 @@ app.get('/api/consultations', (req, res) => {
 });
 
 // Start Server
-app.listen(PORT, () => {
-  console.log(`Server backend Solusin berjalan di http://localhost:${PORT}`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Server backend Solusin berjalan di http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;

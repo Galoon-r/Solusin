@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studi Kasus & Implementasi Nyata - Solusin</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=5" />
+</head>
+
+<body>
+
+  <!-- Background Atmosphere -->
+  <div class="bg-atmosphere">
+    <div class="bg-grid-overlay"></div>
+    <div class="bg-glow-radial"></div>
+    <canvas id="network-canvas"></canvas>
+  </div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="site-header">
+    <div class="header-container">
+
+      <!-- Brand Name -->
+      <a href="index.html" class="brand-logo">
+        <span class="logo-text">Solusin</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="main-nav" id="mainNav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Beranda</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html#pendekatan" class="nav-link">Pendekatan Kami</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html#alur" class="nav-link">Alur Kerja</a>
+          </li>
+          <li class="nav-item">
+            <a href="studi-kasus.html" class="nav-link active" style="color: #fff;">Studi Kasus</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html#nilai" class="nav-link">Keunggulan</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="header-actions">
+        <a href="index.html#konsultasi" class="btn btn-primary btn-pill">
+          <span>Mulai Konsultasi</span>
+          <svg class="arrow-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Buka menu navigasi">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main style="padding-top: calc(var(--nav-height) + 2rem);">
+    <section class="section-container" style="min-height: 70vh;">
+      <div class="section-header" style="text-align: left; margin-bottom: 3.5rem;">
+        <span class="section-tag">Studi Kasus & Portofolio</span>
+        <h1 class="section-title" style="font-size: clamp(2rem, 3.5vw, 2.75rem); margin-top: 0.5rem;">Hasil Pengerjaan & Implementasi Nyata</h1>
+        <p class="section-subtitle" style="margin: 0; max-width: 680px;">
+          Dokumentasi mendalam mengenai masalah nyata yang kami bedah, arsitektur yang dirancang, dan sistem tepat guna yang telah aktif berjalan membantu operasional klien.
+        </p>
+      </div>
+
+      <!-- Featured Deep Case Study: Proteksi Arus Kas & Manajemen Stok Cerdas -->
+      <div class="featured-case">
+        <div class="featured-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+            <polyline points="16 7 22 7 22 13"></polyline>
+          </svg>
+          Studi Kasus Efisiensi Bisnis &amp; Supply Chain
+        </div>
+
+        <div class="featured-grid">
+          <div>
+            <h2 style="font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight: 800; color: #fff; margin-bottom: 1rem; line-height: 1.25;">
+              Menyelamatkan Modal Kerja dari Kebocoran Akibat Salah Hitung Stok di 12.000 Produk
+            </h2>
+            <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.65; margin-bottom: 1.5rem;">
+              Ketika bisnis bertumbuh, tebak-tebakan belanja barang adalah musuh terbesar arus kas (<em>cash flow</em>). Kami merancang sistem peramalan terintegrasi yang memadukan data transaksi riil, jadwal promosi, dan tren musiman—berhasil <strong>memangkas kesalahan estimasi belanja hingga 30%</strong> sekaligus menghentikan potensi omzet hilang akibat barang kosong.
+            </p>
+
+            <h4 style="font-size: 0.95rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">
+              Dilema Nyata yang Menggerus Profit Usaha:
+            </h4>
+            <ul class="case-breakdown-list">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span><strong>Uang Mati Tertahan di Gudang (Overstock):</strong> Karena khawatir kehabisan barang, pengadaan stok sering dilebihkan. Akibatnya, modal kerja terikat menjadi tumpukan barang yang lambat berputar dan membebani biaya gudang.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span><strong>Kehilangan Omzet di Depan Mata (Lost Sales):</strong> Barang cepat laku sering terlambat dipasok ulang. Parahnya, saat stok habis tercatat 0, rumus lama mengira peminatnya hilang dan justru memangkas pesanan berikutnya!</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span><strong>Keputusan Bernilai Miliaran Bergantung pada Excel Manual:</strong> Puluhan jam staf habis hanya untuk mengecek spreadsheet ribuan baris yang rentan salah ketik dan bias asumsi pribadi.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Highlight Metric Boxes -->
+          <div>
+            <div class="case-metric-box">
+              <div class="metric-item">
+                <span class="metric-val">30%</span>
+                <span class="metric-lbl">Pemangkasan Kesalahan Belanja Stok Usaha</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-val">12.000+</span>
+                <span class="metric-lbl">Variasi Produk Terkelola Lintas Gudang</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-val">Arus Kas Sehat</span>
+                <span class="metric-lbl">Modal Bebas Dialihkan untuk Ekspansi Bisnis</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-val">Otomasi 80%</span>
+                <span class="metric-lbl">Pengadaan Rutin Berjalan Tanpa Beban Manual</span>
+              </div>
+            </div>
+
+            <div style="margin-top: 1.5rem; padding: 1.25rem; border-radius: 12px; background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.05);">
+              <h5 style="color: #fff; font-size: 0.9rem; margin-bottom: 0.4rem;">Dampak Finansial Nyata</h5>
+              <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; margin: 0;">
+                Tingkat cadangan pengaman (<em>safety stock</em>) berhasil diturunkan signifikan tanpa meningkatkan risiko kehabisan barang. Uang kas operasional berputar lebih cepat dan lebih produktif menghasilkan keuntungan.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- DEEP DIVE: WORKFLOW & ARSITEKTUR SISTEM -->
+        <div class="case-deep-dive">
+          <h3 class="case-section-subtitle">Alur Otomasi: Mengubah Data Penjualan Menjadi Keputusan Pengadaan Cepat</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+            Sistem bekerja secara otomatis di belakang layar setiap akhir pekan, mempersiapkan rekomendasi belanja yang presisi untuk minggu berikutnya:
+          </p>
+
+          <div class="workflow-track">
+            <div class="workflow-card">
+              <span class="workflow-step-badge">Fase 01</span>
+              <h4>Sinkronisasi Data Otomatis</h4>
+              <p>Menghubungkan data transaksi penjualan kasir/gudang dengan jadwal promosi diskon dari tim marketing tanpa perlu rekap dokumen manual.</p>
+            </div>
+
+            <div class="workflow-card">
+              <span class="workflow-step-badge">Fase 02</span>
+              <h4>Penyelamatan Sinyal Permintaan</h4>
+              <p>Sistem cerdas mendeteksi hari-hari saat stok habis, menghitung potensi penjualan yang terlewat agar rencana pasokan berikutnya tidak dipotong keliru.</p>
+            </div>
+
+            <div class="workflow-card">
+              <span class="workflow-step-badge">Fase 03</span>
+              <h4>Pembacaan Pola Pasar</h4>
+              <p>Mengkorelasikan riwayat belanja dengan faktor pendukung: tanggal gajian, hari libur, tren cuaca, dan tingkat diskon produk.</p>
+            </div>
+
+            <div class="workflow-card">
+              <span class="workflow-step-badge">Fase 04</span>
+              <h4>Klasifikasi Perputaran Barang</h4>
+              <p>Memisahkan barang stabil dari produk musiman atau produk baru, sehingga perhitungan tidak disamaratakan secara kaku.</p>
+            </div>
+
+            <div class="workflow-card">
+              <span class="workflow-step-badge">Fase 05</span>
+              <h4>Keputusan Cepat Berbasis Prioritas</h4>
+              <p><strong>80% barang rutin</strong> langsung terbit rekomendasi PO-nya secara otomatis. Tim pimpinan hanya perlu meninjau <strong>20% kasus khusus</strong> dalam hitungan menit.</p>
+            </div>
+          </div>
+
+          <!-- COMPARISON TABLE: SISTEM LAMA VS SISTEM BARU -->
+          <h3 class="case-section-subtitle">Perbandingan Menyeluruh: Sistem Lama vs Sistem Baru yang Kami Bangun</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+            Perbandingan mendalam antara metode estimasi konvensional (rumus manual / spreadsheet lama) dengan sistem otomasi cerdas yang telah aktif berjalan:
+          </p>
+
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th style="width: 20%;">Aspek Evaluasi</th>
+                  <th style="width: 38%;">Sistem Lama (Sebelum Solusi)</th>
+                  <th style="width: 42%;">Sistem Baru (Setelah Diimplementasikan)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Metode &amp; Arsitektur Hitung</strong></td>
+                  <td>Rumus statistik statis (ARIMA) &amp; kalkulasi rata-rata spreadsheet yang dihitung terpisah per SKU tanpa interaksi antar-produk.</td>
+                  <td>Model analisis cerdas hybrid terintegrasi yang mampu mempelajari pola korelasi silang antar 12.000+ produk secara bersamaan.</td>
+                </tr>
+                <tr>
+                  <td><strong>Tingkat Akurasi (Error Rate)</strong></td>
+                  <td>Tingkat kesalahan estimasi tinggi mencapai 21.4% (deviasi meleset lebar, terutama pada produk yang jarang laku).</td>
+                  <td>Kesalahan estimasi belanja terpangkas menjadi 15.0% (<strong>penurunan error sebesar 30%</strong> di seluruh katalog produk).</td>
+                </tr>
+                <tr>
+                  <td><strong>Perlakuan Saat Barang Habis</strong></td>
+                  <td>Dicatat "penjualan 0" dan disimpulkan peminat hilang. Akibatnya pasokan barang berikutnya malah dikurangi secara keliru.</td>
+                  <td>Mendeteksi periode habis stok dan mengestimasi permintaan riil pasar yang terlewat, mencegah terjadinya kehabisan stok berulang.</td>
+                </tr>
+                <tr>
+                  <td><strong>Integrasi Jadwal Promosi &amp; Diskon</strong></td>
+                  <td>Tidak terhubung. Tim harus menebak lonjakan permintaan secara manual saat ada promosi diskon dari pemasaran.</td>
+                  <td>Jadwal promosi, hari gajian, hari libur nasional, dan tren musiman otomatis dijadikan variabel penentu proyeksi belanja.</td>
+                </tr>
+                <tr>
+                  <td><strong>Kebutuhan Modal Kerja (Safety Stock)</strong></td>
+                  <td>Menumpuk stok pengaman tinggi di gudang demi menutup ketidakpastian hitungan manual (modal kerja mandek).</td>
+                  <td>Batas stok pengaman dapat diturunkan aman karena estimasi presisi, <strong>membebaskan kas operasional usaha</strong>.</td>
+                </tr>
+                <tr>
+                  <td><strong>Penanganan Produk Baru</strong></td>
+                  <td>Hanya ditebak-tebak karena belum ada riwayat transaksi masa lalu (rentan kelebihan stok atau kehabisan dini).</td>
+                  <td>Sistem meminjam karakteristik dan pola permintaan dari kelompok produk sejenis sebagai acuan awal yang terkalibrasi.</td>
+                </tr>
+                <tr>
+                  <td><strong>Efisiensi Alur Kerja Tim</strong></td>
+                  <td>Staf menghabiskan 80% jam kerjanya berkutat mengoreksi angka spreadsheet manual ribuan baris satu demi satu.</td>
+                  <td><strong>80% pengadaan rutin terbit otomatis</strong>; tim hanya meluangkan hitungan menit untuk meninjau produk dengan anomali khusus.</td>
+                </tr>
+                <tr>
+                  <td><strong>Pembaruan Pola Belanja</strong></td>
+                  <td>Rekalibrasi manual yang lambat dan sporadis, sering terlambat merespons perubahan tren pasar terkini.</td>
+                  <td>Siklus pembaruan otomatis berjalan tiap akhir pekan, siap mengeksekusi rencana pengadaan minggu berikutnya.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Featured Deep Case Study 2: Optimasi Energi Terbarukan & Jaringan Distribusi Daya -->
+      <div class="featured-case" style="margin-top: 3.5rem;">
+        <div class="featured-badge" style="background: rgba(16, 185, 129, 0.15); color: #6ee7b7; border-color: rgba(52, 211, 153, 0.3);">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+          Studi Kasus Efisiensi Energi &amp; Manajemen Utilitas
+        </div>
+
+        <div class="featured-grid">
+          <div>
+            <h2 style="font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight: 800; color: #fff; margin-bottom: 1rem; line-height: 1.25;">
+              Optimasi Pembangkit Energi Terbarukan &amp; Stabilisasi Distribusi Daya Cerdas
+            </h2>
+            <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.65; margin-bottom: 1.5rem;">
+              Menjawab tantangan volatilitas cuaca pada aset pembangkit listrik tenaga surya (solar) dan angin (wind). Kami membangun sistem terpadu yang memprediksi produksi energi dan fluktuasi beban konsumsi pelanggan secara <em>real-time</em>, sukses <strong>meningkatkan produksi daya bersih hingga 10%</strong> serta memangkas ketergantungan pada generator fosil cadangan yang boros biaya.
+            </p>
+
+            <h4 style="font-size: 0.95rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">
+              Tantangan Operasional yang Menguras Biaya:
+            </h4>
+            <ul class="case-breakdown-list">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span><strong>Ketidakpastian Pasokan Cuaca:</strong> Radiasi matahari yang tertutup awan mendadak atau angin yang tiba-tiba reda membuat pasokan daya anjlok tanpa peringatan dini.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span><strong>Dilema Pemborosan vs Risiko Pemadaman:</strong> Operator terpaksa membuang kelebihan energi saat produksi melimpah (*curtailment*), atau membakar bahan bakar fosil mahal saat terjadi defisit mendadak demi mencegah mati listrik.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span><strong>Jadwal Pemeliharaan yang Reaktif:</strong> Kerusakan trafo dan inverter baru diketahui saat listrik sudah padam, melipatgandakan ongkos perbaikan darurat dan kerugian operasional.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Highlight Metric Boxes -->
+          <div>
+            <div class="case-metric-box">
+              <div class="metric-item">
+                <span class="metric-val">+10%</span>
+                <span class="metric-lbl">Peningkatan Penyaluran Energi Bersih Efektif</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-val">-5%</span>
+                <span class="metric-lbl">Pengurangan Emisi Karbon &amp; Bahan Bakar Cadangan</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-val">Stabil</span>
+                <span class="metric-lbl">Pencegahan Defisit Beban &amp; Blackout Listrik</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-val">Real-time</span>
+                <span class="metric-lbl">Monitoring Sensor Jaringan &amp; Cuaca Satelit</span>
+              </div>
+            </div>
+
+            <div style="margin-top: 1.5rem; padding: 1.25rem; border-radius: 12px; background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.05);">
+              <h5 style="color: #fff; font-size: 0.9rem; margin-bottom: 0.4rem;">Keuntungan Finansial Langsung</h5>
+              <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; margin: 0;">
+                Memaksimalkan setiap kilowatt-hour (kWh) dari investasi aset panel surya dan turbin angin yang sudah ada, sekaligus memangkas pembelian bahan bakar fosil darurat yang selama ini menggerus margin laba.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- DEEP DIVE WORKFLOW -->
+        <div class="case-deep-dive">
+          <h3 class="case-section-subtitle">Alur Otomasi Sistem: Dari Sinyal Cuaca Hingga Distribusi Beban Listrik</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+            Sistem bekerja secara kontinu mengintegrasikan pembacaan kondisi alam dengan dinamika kebutuhan listrik pelanggan:
+          </p>
+
+          <div class="workflow-track">
+            <div class="workflow-card">
+              <span class="workflow-step-badge" style="background: rgba(16, 185, 129, 0.15); color: #6ee7b7;">Tahap 01</span>
+              <h4>Integrasi Sensor Cuaca &amp; Satelit</h4>
+              <p>Menghubungkan citra satelit dan sensor stasiun cuaca: intensitas radiasi matahari (solar irradiance), kecepatan angin, suhu, dan kelembapan secara <em>real-time</em>.</p>
+            </div>
+
+            <div class="workflow-card">
+              <span class="workflow-step-badge" style="background: rgba(16, 185, 129, 0.15); color: #6ee7b7;">Tahap 02</span>
+              <h4>Sinkronisasi Status Gardu &amp; Trafo</h4>
+              <p>Membaca aliran arus listrik, suhu trafo, dan kapasitas baterai cadangan guna mendeteksi titik kemacetan transmisi (*grid bottlenecks*) sedini mungkin.</p>
+            </div>
+
+            <div class="workflow-card">
+              <span class="workflow-step-badge" style="background: rgba(16, 185, 129, 0.15); color: #6ee7b7;">Tahap 03</span>
+              <h4>Peramalan Produksi &amp; Konsumsi</h4>
+              <p>Model analitik memproyeksikan berapa daya yang akan dihasilkan beberapa jam ke depan, disandingkan dengan profil jam sibuk pemakaian listrik pelanggan.</p>
+            </div>
+
+            <div class="workflow-card">
+              <span class="workflow-step-badge" style="background: rgba(16, 185, 129, 0.15); color: #6ee7b7;">Tahap 04</span>
+              <h4>Rencana Penyaluran Cerdas (Smart Dispatch)</h4>
+              <p>Sistem otomatis menentukan berapa porsi daya surya/angin yang dialirkan ke pelanggan, berapa yang disimpan ke baterai, dan kapan generator konvensional perlu bersiaga.</p>
+            </div>
+
+            <div class="workflow-card">
+              <span class="workflow-step-badge" style="background: rgba(16, 185, 129, 0.15); color: #6ee7b7;">Tahap 05</span>
+              <h4>Pencegahan Gangguan Proaktif</h4>
+              <p>Memberikan peringatan otomatis saat ada unit trafo atau inverter yang menunjukkan anomali beban sebelum terjadi lonjakan arus atau pemadaman listrik.</p>
+            </div>
+          </div>
+
+          <!-- COMPARISON TABLE -->
+          <h3 class="case-section-subtitle">Perbandingan Menyeluruh: Pengelolaan Energi Lama vs Sistem Cerdas Baru</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+            Perbedaan konkret antara metode pengelolaan daya tradisional dengan arsitektur sistem prediktif yang kami terapkan:
+          </p>
+
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th style="width: 20%;">Aspek Operasional</th>
+                  <th style="width: 38%;">Sistem Lama (Reaktif / Manual)</th>
+                  <th style="width: 42%;">Sistem Baru (Prediktif &amp; Terintegrasi)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Peramalan Pasokan Energi</strong></td>
+                  <td>Mengandalkan prakiraan cuaca umum yang tidak akurat pada level jam per jam lokasi pembangkit.</td>
+                  <td>Prediksi hiper-lokal jam per jam berbasis sensor lapangan dan data satelit spesifik di area panel/turbin.</td>
+                </tr>
+                <tr>
+                  <td><strong>Efisiensi Pemanfaatan Energi</strong></td>
+                  <td>Energi sering terbuang (*curtailed*) saat pasokan melimpah karena takut membebani kapasitas jaringan.</td>
+                  <td>Penyaluran daya dan pengisian baterai diatur presisi, <strong>produksi daya termanfaatkan naik 10%</strong>.</td>
+                </tr>
+                <tr>
+                  <td><strong>Ketergantungan Bahan Bakar Fosil</strong></td>
+                  <td>Generator diesel/batubara harus terus menyala siaga (boros BBM) untuk mengantisipasi cuaca mendadak mendung.</td>
+                  <td>Generator cadangan hanya dinyalakan saat sistem memberi sinyal defisit pasti, <strong>memangkas biaya BBM &amp; emisi 5%</strong>.</td>
+                </tr>
+                <tr>
+                  <td><strong>Stabilitas Jaringan &amp; Pemadaman</strong></td>
+                  <td>Sering terjadi pemadaman mendadak (*blackout*) saat beban puncak pelanggan tidak terduga oleh operator.</td>
+                  <td>Keseimbangan pasokan vs permintaan diproyeksikan di awal, menjaga kestabilan voltase jaringan 24/7.</td>
+                </tr>
+                <tr>
+                  <td><strong>Strategi Pemeliharaan Peralatan</strong></td>
+                  <td>Perbaikan reaktif setelah trafo/inverter rusak, biaya suku cadang darurat dan ganti rugi pemadaman sangat mahal.</td>
+                  <td><em>Predictive Maintenance</em>: Sistem mendeteksi gejala penurunan performa sebelum terjadi kerusakan total.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="margin-bottom: 2rem;">
+        <h3 style="font-size: 1.35rem; font-weight: 700; color: #fff;">Studi Kasus Lainnya yang Sedang Berjalan</h3>
+      </div>
+
+      <!-- Case Studies Cards Grid -->
+      <div class="case-study-grid">
+        <div class="case-card placeholder-card">
+          <div class="case-badge">Segera Hadir</div>
+          <div class="case-icon-placeholder">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="3" y1="9" x2="21" y2="9"></line>
+              <line x1="9" y1="21" x2="9" y2="9"></line>
+            </svg>
+          </div>
+          <h3>Otomatisasi Stok & Transaksi UMKM Retail</h3>
+          <p>Membedah kendala selisih stok harian dan pencatatan kas manual yang memakan 3 jam setiap tutup toko, digantikan sistem terpusat yang praktis.</p>
+        </div>
+
+        <div class="case-card placeholder-card">
+          <div class="case-badge">Segera Hadir</div>
+          <div class="case-icon-placeholder">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+          </div>
+          <h3>Alur Koordinasi & Penugasan Tim Lapangan</h3>
+          <p>Penyederhanaan koordinasi penugasan via chat yang sering terlewat menjadi dashboard ringkas berbasis progres pekerjaan real-time.</p>
+        </div>
+
+        <div class="case-card placeholder-card">
+          <div class="case-badge">Segera Hadir</div>
+          <div class="case-icon-placeholder">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+          <h3>Dashboard Laporan Keuangan Multi-Cabang</h3>
+          <p>Menghubungkan data transaksi dari 4 cabang berbeda ke satu ringkasan otomatis tanpa perlu rekap excel berulang setiap akhir pekan.</p>
+        </div>
+      </div>
+
+      <!-- Back to Home CTA Box -->
+      <div style="margin-top: 4rem; padding: 2.5rem; border-radius: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;">
+        <div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.4rem; color: #fff;">Punya Masalah Operasional yang Ingin Diselesaikan?</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">Ceritakan kendala Anda langsung kepada kami, dan mari rancang solusi yang tepat.</p>
+        </div>
+        <a href="index.html#konsultasi" class="btn btn-primary btn-pill btn-lg">
+          <span>Konsultasikan Masalah Anda</span>
+          <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="logo-text">Solusin</span>
+        <p>Jasa Konsultasi dan Pembuatan Sistem Penyelesaian Masalah Berbasis Teknologi.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Klien Kami</h4>
+          <a href="index.html#klien">UMKM</a>
+          <a href="index.html#klien">Individu</a>
+          <a href="index.html#klien">Organisasi</a>
+          <a href="index.html#klien">Perusahaan</a>
+        </div>
+        <div>
+          <h4>Informasi</h4>
+          <a href="index.html#pendekatan">Pendekatan Kami</a>
+          <a href="index.html#alur">Alur Kerja</a>
+          <a href="studi-kasus.html">Studi Kasus</a>
+          <a href="index.html#nilai">Keunggulan</a>
+          <a href="index.html#privasi">Keamanan Data</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Solusin. Solusi Nyata yang Dibangun Langsung Sesuai Masalah Anda.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

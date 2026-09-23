@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solusi Teknologi Berorientasi Masalah - Konsultasi & Kerja Sama Nyata</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=5" />
+</head>
+
+<body>
+
+  <!-- Background Atmosphere & Interactive Network Canvas -->
+  <div class="bg-atmosphere">
+    <div class="bg-grid-overlay"></div>
+    <div class="bg-glow-radial"></div>
+    <canvas id="network-canvas"></canvas>
+  </div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="site-header">
+    <div class="header-container">
+
+      <!-- Brand Name (Text Only, No Icon) -->
+      <a href="#" class="brand-logo">
+        <span class="logo-text">Solusin</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="main-nav" id="mainNav">
+        <ul class="nav-list">
+          <li class="nav-item has-dropdown">
+            <button class="nav-link dropdown-toggle" aria-expanded="false">
+              Kategori Klien
+              <svg class="chevron-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#klien">UMKM & Usaha Lokal</a></li>
+              <li><a href="#klien">Individu & Profesional</a></li>
+              <li><a href="#klien">Organisasi & Komunitas</a></li>
+              <li><a href="#klien">Perusahaan & Bisnis</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#pendekatan" class="nav-link">Pendekatan Kami</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#alur" class="nav-link">Alur Kerja</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="studi-kasus.html" class="nav-link">Studi Kasus</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#nilai" class="nav-link">Keunggulan</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Right Header Actions (CTA & Mobile Toggle) -->
+      <div class="header-actions">
+        <a href="#konsultasi" class="btn btn-primary btn-pill">
+          <span>Mulai Konsultasi</span>
+          <svg class="arrow-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Buka menu navigasi">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- HERO SECTION (Struktur & Layout Sesuai Referensi Omdena) -->
+    <section class="hero-section">
+      <div class="hero-container">
+
+        <div class="hero-content">
+          <!-- Tagline Badge -->
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span>Jasa Konsultasi & Pembangunan Sistem Berbasis Masalah</span>
+          </div>
+
+          <!-- Main Headline with 3-Line Highlight -->
+          <h1 class="hero-title">
+            <span class="title-line">Selesaikan masalah <span class="accent-text accent-1">nyata.</span></span>
+            <span class="title-line"><span class="accent-text accent-2">Dengan sistem tepat guna.</span></span>
+            <span class="title-line">Dibangun <span class="accent-text accent-3">langsung untuk Anda.</span></span>
+          </h1>
+
+          <!-- Core Value Statement -->
+          <p class="hero-description">
+            Bawa kendala operasional Anda — dari pemborosan waktu, tenaga, biaya, hingga proses kerja yang rumit. Kami bedah masalahnya dan bangun langsung sistem yang benar-benar Anda butuhkan.
+          </p>
+
+          <!-- Dual Pill Action Buttons -->
+          <div class="hero-actions">
+            <a href="#konsultasi" class="btn btn-primary btn-pill btn-lg">
+              <span>Sampaikan Masalah Anda</span>
+              <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+
+            <a href="#alur" class="btn btn-secondary btn-pill btn-lg">
+              <span>Pelajari Alur Kerja</span>
+              <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Audience / Segments Chips (Target Klien) -->
+          <div class="hero-segments" id="klien">
+            <span class="segment-label">Membantu:</span>
+            <span class="segment-tag">UMKM & Usaha Lokal</span>
+            <span class="segment-tag">Individu & Profesional</span>
+            <span class="segment-tag">Organisasi & Bisnis</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: NILAI YANG DITAWARKAN -->
+    <section class="section-container" id="nilai">
+      <div class="section-header">
+        <span class="section-tag">Solutif & Tepat Sasaran</span>
+        <h2 class="section-title">Nilai yang Kami Hadirkan untuk Anda</h2>
+        <p class="section-subtitle">
+          Kami tidak menjual paket software generik. Kami merancang dan membangun sistem secara spesifik sesuai kondisi dan kendala yang Anda alami.
+        </p>
+      </div>
+
+      <div class="grid-cards-3">
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="6"></circle>
+              <circle cx="12" cy="12" r="2"></circle>
+            </svg>
+          </div>
+          <h3>Diagnosis Masalah Terlebih Dahulu</h3>
+          <p>Kami tidak langsung membuat sistem sebelum memahami akar permasalahan. Setiap solusi berawal dari diagnosis mendalam atas kendala kerja Anda.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18h6"></path>
+              <path d="M10 22h4"></path>
+              <path d="M12 2a7 7 0 0 0-7 7c0 2.5 1.5 4.5 3 5.5V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.5c1.5-1 3-3 3-5.5a7 7 0 0 0-7-7z"></path>
+            </svg>
+          </div>
+          <h3>Klien Tidak Perlu Bingung Teknis</h3>
+          <p>Anda cukup menceritakan masalah yang dihadapi. Tim kami yang menentukan formula dan arsitektur sistem yang paling pas dan efisien.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+            </svg>
+          </div>
+          <h3>Kami Bangun Sistemnya Langsung</h3>
+          <p>Bukan sekadar konsultan yang memberi saran atau laporan di atas kertas. Kami membuat, mengerjakan, dan menerapkan sistemnya langsung ke alur kerja Anda.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3>Sesuai Kemampuan & Skala Klien</h3>
+          <p>Sistem dibuat tidak berlebihan dan ramah anggaran. Dirancang agar mudah dipahami, mudah digunakan, dan siap dipakai oleh tim Anda sehari-hari.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+          <h3>Pendampingan & Evaluasi</h3>
+          <p>Setelah sistem selesai diterapkan, kami mengevaluasi dampaknya bersama Anda dan siap membantu penyesuaian seiring pertumbuhan usaha.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          <h3>Keamanan Data & Privasi Terjamin</h3>
+          <p>Informasi dan alur kerja internal bisnis Anda kami jaga kerahasiaannya dengan standar perlindungan dan pembatasan akses yang ketat.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: PENDEKATAN KAMI (Menggantikan Metode Manual vs Smart System) -->
+    <section class="section-container" id="pendekatan">
+      <div class="section-header">
+        <span class="section-tag">Fokus Pada Solusi</span>
+        <h2 class="section-title">Bagaimana Kami Membantu Menyelesaikan Masalah Anda</h2>
+        <p class="section-subtitle">
+          Apapun tingkat kesiapan teknologi Anda saat ini, kami siap merancang solusi yang paling realistis dan efektif.
+        </p>
+      </div>
+
+      <div class="dual-method-grid">
+        <div class="method-card">
+          <div class="method-badge">Fase 1</div>
+          <h3>Memahami & Mengurai Masalah</h3>
+          <p class="method-desc">Kami pelajari alur kerja Anda saat ini secara langsung untuk menemukan titik-titik hambatan.</p>
+          <ul class="method-list">
+            <li><span>✓</span> Identifikasi pemborosan waktu dan biaya operasional</li>
+            <li><span>✓</span> Penelusuran hambatan alur kerja manual atau pencatatan yang rentan salah</li>
+            <li><span>✓</span> Pemetaan kebutuhan nyata tim atau individu di lapangan</li>
+            <li><span>✓</span> Perumusan spesifikasi sistem solusi yang paling ringkas dan tepat sasaran</li>
+          </ul>
+        </div>
+
+        <div class="method-card highlight-border">
+          <div class="method-badge active">Fase 2</div>
+          <h3>Membangun & Menerapkan Sistem</h3>
+          <p class="method-desc">Kami bangun sistem khusus yang langsung menyelesaikan kendala tersebut tanpa fitur yang berlebihan.</p>
+          <ul class="method-list">
+            <li><span>✓</span> Pembuatan sistem yang langsung menjawab masalah klien</li>
+            <li><span>✓</span> Antarmuka sederhana yang mudah dioperasikan siapapun</li>
+            <li><span>✓</span> Penerapan langsung ke dalam alur operasional harian</li>
+            <li><span>✓</span> Uji coba bersama dan pendampingan hingga berjalan stabil</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: ALUR LAYANAN (7 Langkah) -->
+    <section class="section-container" id="alur">
+      <div class="section-header">
+        <span class="section-tag">Alur Kerja</span>
+        <h2 class="section-title">Langkah Kolaborasi Bersama Kami</h2>
+        <p class="section-subtitle">Transparan, terarah, dan berfokus pada hasil penyelesaian masalah yang nyata.</p>
+      </div>
+
+      <div class="flow-steps">
+        <div class="step-item">
+          <div class="step-num">01</div>
+          <h4>Konsultasi Awal</h4>
+          <p>Sampaikan kendala, proses saat ini, dan target yang ingin dicapai melalui form website.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">02</div>
+          <h4>Identifikasi Masalah</h4>
+          <p>Komunikasi lanjutan untuk memahami kondisi dan menggali akar masalah operasional.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">03</div>
+          <h4>Pengumpulan Data</h4>
+          <p>Mengumpulkan dokumen kerja, alur transaksi, atau pencatatan yang sedang berjalan.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">04</div>
+          <h4>Analisis & Pemetaan</h4>
+          <p>Menemukan celah ketidakefisienan dan menentukan bagian yang perlu disederhanakan.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">05</div>
+          <h4>Perancangan Solusi</h4>
+          <p>Merancang arsitektur sistem yang praktis, tepat guna, dan sesuai kemampuan Anda.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">06</div>
+          <h4>Pembuatan & Penerapan</h4>
+          <p>Kami bangun sistemnya dan bantu terapkan langsung ke operasional Anda.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">07</div>
+          <h4>Evaluasi Hasil</h4>
+          <p>Memastikan masalah teratasi dengan baik dan siap mendukung pengembangan berikutnya.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: STUDI KASUS TEASER BANNER -->
+    <section class="section-container" id="studi-kasus">
+      <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(129, 140, 248, 0.05) 100%); border: 1px solid rgba(255, 255, 255, 0.09); border-radius: 20px; padding: 3rem 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+        <div style="max-width: 620px;">
+          <span class="section-tag" style="margin-bottom: 0.75rem;">Studi Kasus & Portofolio</span>
+          <h2 style="font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 700; margin-bottom: 0.75rem; color: #fff;">Lihat Hasil Pengerjaan & Solusi Nyata</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+            Pelajari bagaimana kami mengurai kendala di lapangan, termasuk sistem manajemen stok pintar yang sukses <strong>menurunkan kesalahan belanja barang sebesar 30%</strong> pada jaringan 12.000+ produk.
+          </p>
+        </div>
+        <div>
+          <a href="studi-kasus.html" class="btn btn-primary btn-pill btn-lg">
+            <span>Buka Halaman Studi Kasus</span>
+            <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: FORMULIR KONSULTASI / PINTU MASUK LAYANAN -->
+    <section class="section-container" id="konsultasi">
+      <div class="consultation-wrapper">
+        <div class="consultation-info">
+          <span class="section-tag">Pintu Masuk Layanan</span>
+          <h2>Ceritakan Masalah yang Sedang Anda Hadapi</h2>
+          <p>
+            Anda membawa masalah, kami siapkan solusinya dan bangun sistemnya secara langsung untuk Anda.
+          </p>
+          <div class="info-checkmarks">
+            <div><span>✓</span> Diskusi awal untuk memetakan kendala</div>
+            <div><span>✓</span> Solusi dirancang khusus (custom-made), bukan template kaku</div>
+            <div><span>✓</span> Kerahasiaan data operasional terjamin sepenuhnya</div>
+          </div>
+        </div>
+
+        <div class="consultation-form-card">
+          <form id="consultationForm">
+            <div class="form-group">
+              <label for="clientType">Kategori Klien</label>
+              <select id="clientType" required>
+                <option value="">Pilih Kategori...</option>
+                <option value="umkm">Pemilik UMKM / Usaha Lokal</option>
+                <option value="individu">Individu / Profesional</option>
+                <option value="organisasi">Organisasi / Komunitas</option>
+                <option value="perusahaan">Perusahaan / Bisnis</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="clientName">Nama Lengkap / Nama Bisnis</label>
+              <input type="text" id="clientName" placeholder="Contoh: Budi (Kopi Nusantara)" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="clientContact">Nomor WhatsApp</label>
+                <input type="tel" id="clientContact" placeholder="08xxxxxxxxxx" required>
+              </div>
+              <div class="form-group">
+                <label for="clientEmail">Email</label>
+                <input type="email" id="clientEmail" placeholder="nama@email.com" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="problemDescription">Masalah atau Kendala yang Sedang Dihadapi</label>
+              <textarea id="problemDescription" rows="3" placeholder="Jelaskan kendala Anda (misal: pencatatan stok sering keliru, proses manual memakan waktu seharian, data tercecer, dll)" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="expectedOutcome">Hasil atau Kemudahan yang Ingin Anda Dapatkan</label>
+              <textarea id="expectedOutcome" rows="2" placeholder="Contoh: Ingin ada sistem yang otomatis mencatat pesanan dan rekap harian yang mudah dipakai..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-pill btn-lg btn-block">
+              <span>Kirim Formulir Konsultasi</span>
+              <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+            <p class="form-privacy-note">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 5px;">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              Informasi dan data yang Anda sampaikan bersifat rahasia dan aman.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: KEAMANAN & PRIVASI DATA -->
+    <section class="section-container" id="privasi">
+      <div class="privacy-box">
+        <div class="privacy-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <div>
+          <h3>Komitmen Keamanan & Kerahasiaan Data Klien</h3>
+          <p>
+            Kami menjunjung tinggi etika kerahasiaan. Data alur operasional, dokumen, dan proses kerja bisnis yang Anda bagikan hanya digunakan khusus untuk kebutuhan analisis dan perancangan sistem Anda, tanpa pernah dibagikan kepada pihak ketiga.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="logo-text">Solusin</span>
+        <p>Jasa Konsultasi dan Pembuatan Sistem Penyelesaian Masalah Berbasis Teknologi.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Klien Kami</h4>
+          <a href="#klien">UMKM</a>
+          <a href="#klien">Individu</a>
+          <a href="#klien">Organisasi</a>
+          <a href="#klien">Perusahaan</a>
+        </div>
+        <div>
+          <h4>Informasi</h4>
+          <a href="#pendekatan">Pendekatan Kami</a>
+          <a href="#alur">Alur Kerja</a>
+          <a href="studi-kasus.html">Studi Kasus</a>
+          <a href="#nilai">Keunggulan</a>
+          <a href="#privasi">Keamanan Data</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Solusin. Solusi Nyata yang Dibangun Langsung Sesuai Masalah Anda.</p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=2"></script>
+</body>
+
+</html>

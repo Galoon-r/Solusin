@@ -6,7 +6,7 @@
   /* Theme Backgrounds */
   --bg-primary: #070913;              /* Latar utama (gelap pekat seperti referensi) */
   --bg-header: rgba(7, 9, 19, 0.75);   /* Latar navbar transparan / glass */
-  --bg-card: rgba(255, 255, 255, 0.04);/* Latar card/dropdown */
+  --bg-card: rgba(var(--fg-rgb), 0.04);/* Latar card/dropdown */
   --bg-dropdown: #0d1124;
 
   /* Typography Colors */
@@ -26,15 +26,31 @@
   --color-accent-3: #60a5fa;          /* misal: "impact" (Biru terang) */
 
   /* Secondary Button / Outline Styles */
-  --btn-secondary-bg: rgba(255, 255, 255, 0.05);
-  --btn-secondary-border: rgba(255, 255, 255, 0.18);
+  --btn-secondary-bg: rgba(var(--fg-rgb), 0.05);
+  --btn-secondary-border: rgba(var(--fg-rgb), 0.18);
   --btn-secondary-text: #ffffff;
-  --btn-secondary-hover-bg: rgba(255, 255, 255, 0.12);
+  --btn-secondary-hover-bg: rgba(var(--fg-rgb), 0.12);
 
   /* Grid & Atmospheric Glow */
-  --grid-line-color: rgba(255, 255, 255, 0.035);
+  --grid-line-color: rgba(var(--fg-rgb), 0.035);
   --ambient-glow-color: rgba(99, 102, 241, 0.14);
   --ambient-glow-secondary: rgba(168, 85, 247, 0.12);
+
+
+  /* Theme helper tokens */
+  --fg-rgb: 255, 255, 255;            /* Warna "tinta" untuk border/overlay transparan */
+  --bg-inset: rgba(0, 0, 0, 0.25);
+  --color-accent-soft: #a5b4fc;
+  --color-success: #34d399;
+  --color-success-soft: #6ee7b7;
+  --color-neutral-tag: #cbd5e1;
+  --bg-table: rgba(15, 23, 42, 0.4);
+  --featured-bg: linear-gradient(135deg, rgba(30, 27, 75, 0.45) 0%, rgba(15, 23, 42, 0.65) 100%);
+  --shadow-featured: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  --shadow-dropdown: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  --canvas-node: rgba(255, 255, 255, 0.7);
+  --canvas-line-rgb: 168, 140, 255;
+  color-scheme: dark;
 
   /* Layout & Spacing */
   --max-width: 1280px;
@@ -134,7 +150,7 @@ ul {
   background-color: var(--bg-header);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(var(--fg-rgb), 0.06);
   z-index: 100;
   transition: var(--transition-smooth);
 }
@@ -214,10 +230,10 @@ ul {
   left: -12px;
   min-width: 190px;
   background-color: var(--bg-dropdown);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(var(--fg-rgb), 0.1);
   border-radius: 12px;
   padding: 0.6rem;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  box-shadow: var(--shadow-dropdown);
   opacity: 0;
   visibility: hidden;
   transform: translateY(8px);
@@ -245,8 +261,8 @@ ul {
 }
 
 .dropdown-menu a:hover {
-  color: #fff;
-  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--text-main);
+  background-color: rgba(var(--fg-rgb), 0.06);
 }
 
 /* Header Actions (Search & Book Button) */
@@ -264,15 +280,15 @@ ul {
   height: 40px;
   border-radius: 50%;
   color: var(--text-nav);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(var(--fg-rgb), 0.1);
+  background: rgba(var(--fg-rgb), 0.03);
   transition: var(--transition-smooth);
 }
 
 .search-btn:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--text-main);
+  background: rgba(var(--fg-rgb), 0.08);
+  border-color: rgba(var(--fg-rgb), 0.2);
 }
 
 /* Mobile Toggle */
@@ -288,7 +304,7 @@ ul {
   display: block;
   height: 2px;
   width: 100%;
-  background-color: #fff;
+  background-color: var(--text-main);
   border-radius: 2px;
   transition: var(--transition-smooth);
 }
@@ -341,7 +357,7 @@ ul {
 
 .btn-secondary:hover {
   background-color: var(--btn-secondary-hover-bg);
-  border-color: rgba(255, 255, 255, 0.35);
+  border-color: rgba(var(--fg-rgb), 0.35);
   transform: translateY(-2px);
 }
 
@@ -433,8 +449,8 @@ ul {
   gap: 0.55rem;
   padding: 0.4rem 1rem;
   border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(var(--fg-rgb), 0.04);
+  border: 1px solid rgba(var(--fg-rgb), 0.12);
   color: var(--color-accent-1);
   font-size: 0.85rem;
   font-weight: 600;
@@ -471,14 +487,14 @@ ul {
   color: var(--text-nav);
   padding: 0.35rem 0.85rem;
   border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(var(--fg-rgb), 0.04);
+  border: 1px solid rgba(var(--fg-rgb), 0.08);
   transition: var(--transition-smooth);
 }
 
 .segment-tag:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(var(--fg-rgb), 0.08);
+  border-color: rgba(var(--fg-rgb), 0.2);
   transform: translateY(-1px);
 }
 
@@ -502,7 +518,7 @@ ul {
     left: 0;
     right: 0;
     background: var(--bg-dropdown);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(var(--fg-rgb), 0.1);
     padding: 1.5rem 2rem;
     display: none;
     flex-direction: column;
@@ -529,7 +545,7 @@ ul {
     opacity: 1;
     visibility: visible;
     transform: none;
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(var(--fg-rgb), 0.02);
     border: none;
     box-shadow: none;
     padding-left: 1rem;
@@ -606,7 +622,7 @@ ul {
 
 .feature-card {
   background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(var(--fg-rgb), 0.08);
   border-radius: var(--radius-card);
   padding: 2.2rem;
   transition: var(--transition-smooth);
@@ -615,8 +631,8 @@ ul {
 
 .feature-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(var(--fg-rgb), 0.2);
+  background: rgba(var(--fg-rgb), 0.06);
 }
 
 .card-icon {
@@ -653,8 +669,8 @@ ul {
 }
 
 .method-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(var(--fg-rgb), 0.03);
+  border: 1px solid rgba(var(--fg-rgb), 0.08);
   border-radius: 20px;
   padding: 2.5rem;
   position: relative;
@@ -663,7 +679,7 @@ ul {
 
 .method-card.highlight-border {
   border-color: var(--color-accent-1);
-  background: linear-gradient(180deg, rgba(129, 140, 248, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  background: linear-gradient(180deg, rgba(129, 140, 248, 0.08) 0%, rgba(var(--fg-rgb), 0.02) 100%);
 }
 
 .method-badge {
@@ -672,7 +688,7 @@ ul {
   border-radius: var(--radius-pill);
   font-size: 0.8rem;
   font-weight: 700;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(var(--fg-rgb), 0.08);
   color: var(--text-nav);
   margin-bottom: 1.25rem;
 }
@@ -723,16 +739,16 @@ ul {
 }
 
 .step-item {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(var(--fg-rgb), 0.03);
+  border: 1px solid rgba(var(--fg-rgb), 0.06);
   border-radius: 14px;
   padding: 1.75rem 1.4rem;
   transition: var(--transition-smooth);
 }
 
 .step-item:hover {
-  border-color: rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(var(--fg-rgb), 0.18);
+  background: rgba(var(--fg-rgb), 0.05);
 }
 
 .step-num {
@@ -761,8 +777,8 @@ ul {
   grid-template-columns: 1fr 1.35fr;
   gap: 3.5rem;
   align-items: center;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, rgba(var(--fg-rgb), 0.04) 0%, rgba(var(--fg-rgb), 0.01) 100%);
+  border: 1px solid rgba(var(--fg-rgb), 0.1);
   border-radius: 24px;
   padding: 3.5rem;
   backdrop-filter: blur(16px);
@@ -804,7 +820,7 @@ ul {
 
 .consultation-form-card {
   background: var(--bg-dropdown);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(var(--fg-rgb), 0.12);
   border-radius: 18px;
   padding: 2.25rem;
 }
@@ -832,10 +848,10 @@ ul {
 .form-group textarea {
   width: 100%;
   padding: 0.75rem 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(var(--fg-rgb), 0.05);
+  border: 1px solid rgba(var(--fg-rgb), 0.14);
   border-radius: 10px;
-  color: #fff;
+  color: var(--text-main);
   font-family: inherit;
   font-size: 0.95rem;
   outline: none;
@@ -846,13 +862,13 @@ ul {
 .form-group select:focus,
 .form-group textarea:focus {
   border-color: var(--color-primary);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(var(--fg-rgb), 0.08);
   box-shadow: 0 0 0 3px var(--color-primary-glow);
 }
 
 .form-group select option {
   background: var(--bg-dropdown);
-  color: #fff;
+  color: var(--text-main);
 }
 
 .btn-block {
@@ -870,8 +886,8 @@ ul {
 
 /* Privacy Box */
 .privacy-box {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(var(--fg-rgb), 0.03);
+  border: 1px solid rgba(var(--fg-rgb), 0.08);
   border-radius: 16px;
   padding: 2rem 2.5rem;
   display: flex;
@@ -906,7 +922,7 @@ ul {
 
 /* Footer */
 .site-footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(var(--fg-rgb), 0.08);
   background: var(--bg-primary);
   position: relative;
   z-index: 10;
@@ -943,7 +959,7 @@ ul {
   font-size: 0.95rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #fff;
+  color: var(--text-main);
 }
 
 .footer-links a {
@@ -955,14 +971,14 @@ ul {
 }
 
 .footer-links a:hover {
-  color: #fff;
+  color: var(--text-main);
 }
 
 .footer-bottom {
   max-width: var(--max-width);
   margin: 0 auto;
   padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(var(--fg-rgb), 0.05);
   text-align: center;
   font-size: 0.85rem;
   color: var(--text-muted);
@@ -992,8 +1008,8 @@ ul {
 }
 
 .case-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(var(--fg-rgb), 0.03);
+  border: 1px solid rgba(var(--fg-rgb), 0.08);
   border-radius: var(--radius-card);
   padding: 2.5rem 2rem;
   transition: var(--transition-smooth);
@@ -1003,14 +1019,14 @@ ul {
 
 .case-card.placeholder-card {
   border-style: dashed;
-  border-color: rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.015);
+  border-color: rgba(var(--fg-rgb), 0.14);
+  background: rgba(var(--fg-rgb), 0.015);
 }
 
 .case-card:hover {
   transform: translateY(-4px);
   border-color: var(--color-accent-1);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(var(--fg-rgb), 0.04);
 }
 
 .case-badge {
@@ -1021,9 +1037,9 @@ ul {
   letter-spacing: 0.06em;
   padding: 0.3rem 0.75rem;
   border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(var(--fg-rgb), 0.06);
   color: var(--color-accent-1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(var(--fg-rgb), 0.1);
   margin-bottom: 1.5rem;
 }
 
@@ -1031,7 +1047,7 @@ ul {
   width: 56px;
   height: 56px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(var(--fg-rgb), 0.04);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1054,14 +1070,14 @@ ul {
 
 /* Featured Case Study */
 .featured-case {
-  background: linear-gradient(135deg, rgba(30, 27, 75, 0.45) 0%, rgba(15, 23, 42, 0.65) 100%);
+  background: var(--featured-bg);
   border: 1px solid rgba(129, 140, 248, 0.25);
   border-radius: var(--radius-card);
   padding: clamp(2rem, 3.5vw, 3rem);
   margin-bottom: 3.5rem;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow-featured);
 }
 
 .featured-case::before {
@@ -1086,7 +1102,7 @@ ul {
   padding: 0.35rem 0.9rem;
   border-radius: var(--radius-pill);
   background: rgba(99, 102, 241, 0.15);
-  color: #a5b4fc;
+  color: var(--color-accent-soft);
   border: 1px solid rgba(129, 140, 248, 0.3);
   margin-bottom: 1.25rem;
 }
@@ -1106,8 +1122,8 @@ ul {
 }
 
 .case-metric-box {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(var(--fg-rgb), 0.03);
+  border: 1px solid rgba(var(--fg-rgb), 0.08);
   border-radius: 14px;
   padding: 1.5rem;
   display: grid;
@@ -1123,9 +1139,9 @@ ul {
 .metric-val {
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-weight: 800;
-  color: #fff;
+  color: var(--text-main);
   line-height: 1.1;
-  background: linear-gradient(135deg, #fff 30%, #a5b4fc 100%);
+  background: linear-gradient(135deg, var(--text-main) 30%, var(--color-accent-soft) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1158,7 +1174,7 @@ ul {
 .case-breakdown-list svg {
   flex-shrink: 0;
   margin-top: 0.2rem;
-  color: #34d399;
+  color: var(--color-success);
 }
 
 .arch-steps {
@@ -1169,8 +1185,8 @@ ul {
 }
 
 .arch-step-card {
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--bg-inset);
+  border: 1px solid rgba(var(--fg-rgb), 0.06);
   border-radius: 10px;
   padding: 0.85rem;
   text-align: center;
@@ -1180,7 +1196,7 @@ ul {
   font-size: 0.7rem;
   font-weight: 800;
   text-transform: uppercase;
-  color: #818cf8;
+  color: var(--color-accent-1);
   letter-spacing: 0.05em;
   margin-bottom: 0.25rem;
 }
@@ -1188,21 +1204,21 @@ ul {
 .arch-step-title {
   font-size: 0.82rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--text-main);
   line-height: 1.3;
 }
 
 /* Deep Case Study Breakdown Styles */
 .case-deep-dive {
   margin-top: 3rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(var(--fg-rgb), 0.1);
   padding-top: 2.5rem;
 }
 
 .case-section-subtitle {
   font-size: 1.35rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-main);
   margin-bottom: 1.25rem;
   display: flex;
   align-items: center;
@@ -1222,9 +1238,9 @@ ul {
   width: 100%;
   overflow-x: auto;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(var(--fg-rgb), 0.08);
   margin: 1.5rem 0 2.5rem 0;
-  background: rgba(15, 23, 42, 0.4);
+  background: var(--bg-table);
 }
 
 .custom-table {
@@ -1235,11 +1251,11 @@ ul {
 }
 
 .custom-table th {
-  background: rgba(255, 255, 255, 0.05);
-  color: #a5b4fc;
+  background: rgba(var(--fg-rgb), 0.05);
+  color: var(--color-accent-soft);
   font-weight: 700;
   padding: 1rem 1.25rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(var(--fg-rgb), 0.1);
   text-transform: uppercase;
   font-size: 0.8rem;
   letter-spacing: 0.05em;
@@ -1247,14 +1263,14 @@ ul {
 
 .custom-table td {
   padding: 1rem 1.25rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(var(--fg-rgb), 0.05);
   color: var(--text-muted);
   vertical-align: top;
   line-height: 1.5;
 }
 
 .custom-table tr:hover td {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(var(--fg-rgb), 0.02);
   color: var(--text-main);
 }
 
@@ -1272,13 +1288,13 @@ ul {
 
 .status-tag.active {
   background: rgba(52, 211, 153, 0.15);
-  color: #34d399;
+  color: var(--color-success);
   border: 1px solid rgba(52, 211, 153, 0.3);
 }
 
 .status-tag.eval {
   background: rgba(148, 163, 184, 0.15);
-  color: #cbd5e1;
+  color: var(--color-neutral-tag);
   border: 1px solid rgba(148, 163, 184, 0.3);
 }
 
@@ -1292,8 +1308,8 @@ ul {
 }
 
 .workflow-card {
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(var(--fg-rgb), 0.025);
+  border: 1px solid rgba(var(--fg-rgb), 0.08);
   border-radius: 14px;
   padding: 1.5rem;
   position: relative;
@@ -1303,14 +1319,14 @@ ul {
 .workflow-card:hover {
   transform: translateY(-3px);
   border-color: rgba(129, 140, 248, 0.4);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(var(--fg-rgb), 0.04);
 }
 
 .workflow-step-badge {
   font-size: 0.72rem;
   font-weight: 800;
   text-transform: uppercase;
-  color: #a5b4fc;
+  color: var(--color-accent-soft);
   background: rgba(99, 102, 241, 0.15);
   display: inline-block;
   padding: 0.2rem 0.6rem;
@@ -1321,7 +1337,7 @@ ul {
 .workflow-card h4 {
   font-size: 1.05rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-main);
   margin-bottom: 0.5rem;
 }
 
@@ -1340,15 +1356,15 @@ ul {
 }
 
 .takeaway-box {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(var(--fg-rgb), 0.02);
+  border: 1px solid rgba(var(--fg-rgb), 0.06);
   border-left: 3px solid var(--color-accent-1);
   border-radius: 0 12px 12px 0;
   padding: 1.25rem;
 }
 
 .takeaway-box h5 {
-  color: #fff;
+  color: var(--text-main);
   font-size: 0.98rem;
   font-weight: 700;
   margin-bottom: 0.35rem;
@@ -1361,6 +1377,134 @@ ul {
   margin: 0;
 }
 
+/* ==========================================================================
+   LIGHT THEME  (aktif saat <html data-theme="light">)
+   ========================================================================== */
+:root[data-theme="light"] {
+  --bg-primary: #f6f7fb;
+  --bg-header: rgba(255, 255, 255, 0.82);
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-dropdown: #ffffff;
 
+  --text-main: #0f172a;
+  --text-muted: #556078;
+  --text-nav: #1e293b;
+  --text-nav-hover: #4f46e5;
 
+  --color-primary-glow: rgba(79, 70, 229, 0.28);
 
+  --color-accent-1: #4f46e5;
+  --color-accent-2: #db2777;
+  --color-accent-3: #2563eb;
+
+  --btn-secondary-bg: rgba(15, 23, 42, 0.04);
+  --btn-secondary-border: rgba(15, 23, 42, 0.16);
+  --btn-secondary-text: #0f172a;
+  --btn-secondary-hover-bg: rgba(15, 23, 42, 0.08);
+
+  --grid-line-color: rgba(15, 23, 42, 0.05);
+  --ambient-glow-color: rgba(99, 102, 241, 0.16);
+  --ambient-glow-secondary: rgba(236, 72, 153, 0.10);
+
+  --fg-rgb: 15, 23, 42;
+  --bg-inset: rgba(15, 23, 42, 0.04);
+  --color-accent-soft: #4f46e5;
+  --color-success: #059669;
+  --color-success-soft: #047857;
+  --color-neutral-tag: #475569;
+  --bg-table: rgba(255, 255, 255, 0.85);
+  --featured-bg: linear-gradient(135deg, rgba(238, 242, 255, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%);
+  --shadow-featured: 0 20px 40px -18px rgba(79, 70, 229, 0.25);
+  --shadow-dropdown: 0 16px 36px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(15, 23, 42, 0.05);
+  --canvas-node: rgba(79, 70, 229, 0.65);
+  --canvas-line-rgb: 99, 102, 241;
+  color-scheme: light;
+}
+
+/* Kartu putih butuh sedikit bayangan agar terpisah dari latar */
+:root[data-theme="light"] .feature-card,
+:root[data-theme="light"] .method-card,
+:root[data-theme="light"] .step-item,
+:root[data-theme="light"] .case-card,
+:root[data-theme="light"] .workflow-card,
+:root[data-theme="light"] .privacy-box,
+:root[data-theme="light"] .leads-table-wrapper {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 6px 18px -8px rgba(15, 23, 42, 0.08);
+}
+
+:root[data-theme="light"] .consultation-wrapper {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(238, 242, 255, 0.7) 100%);
+  box-shadow: 0 20px 40px -24px rgba(79, 70, 229, 0.25);
+}
+
+:root[data-theme="light"] .consultation-form-card {
+  box-shadow: 0 8px 24px -12px rgba(15, 23, 42, 0.15);
+}
+
+:root[data-theme="light"] .method-card.highlight-border {
+  background: linear-gradient(180deg, rgba(79, 70, 229, 0.07) 0%, rgba(255, 255, 255, 0.9) 100%);
+}
+
+:root[data-theme="light"] .case-card.placeholder-card {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: none;
+}
+
+:root[data-theme="light"] .site-footer {
+  background: #ffffff;
+}
+
+:root[data-theme="light"] .featured-case::before {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
+}
+
+:root[data-theme="light"] .btn-secondary:hover {
+  border-color: rgba(15, 23, 42, 0.3);
+}
+
+:root[data-theme="light"] .dropdown-menu a:hover {
+  background-color: rgba(15, 23, 42, 0.05);
+}
+
+/* ==========================================================================
+   THEME TOGGLE BUTTON
+   ========================================================================== */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  color: var(--text-nav);
+  border: 1px solid rgba(var(--fg-rgb), 0.14);
+  background: rgba(var(--fg-rgb), 0.04);
+  transition: var(--transition-smooth);
+}
+
+.theme-toggle:hover {
+  color: var(--text-main);
+  background: rgba(var(--fg-rgb), 0.1);
+  border-color: rgba(var(--fg-rgb), 0.28);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--color-accent-1);
+  outline-offset: 2px;
+}
+
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: block; }
+
+:root:not([data-theme="light"]) .theme-toggle .icon-sun { display: block; }
+:root:not([data-theme="light"]) .theme-toggle .icon-moon { display: none; }
+
+/* Transisi halus saat berganti tema (dipasang sementara oleh theme.js) */
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease !important;
+}

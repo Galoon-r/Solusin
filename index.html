@@ -9,7 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=5" />
+    <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#070913" />
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="style.css?v=6" />
 </head>
 
 <body>
@@ -69,7 +72,16 @@
 
       <!-- Right Header Actions (CTA & Mobile Toggle) -->
       <div class="header-actions">
-        <a href="#konsultasi" class="btn btn-primary btn-pill">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Ganti tema" title="Ganti tema">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+                <a href="#konsultasi" class="btn btn-primary btn-pill">
           <span>Mulai Konsultasi</span>
           <svg class="arrow-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -315,10 +327,10 @@
 
     <!-- SECTION: STUDI KASUS TEASER BANNER -->
     <section class="section-container" id="studi-kasus">
-      <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(129, 140, 248, 0.05) 100%); border: 1px solid rgba(255, 255, 255, 0.09); border-radius: 20px; padding: 3rem 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+      <div style="background: linear-gradient(135deg, rgba(var(--fg-rgb), 0.04) 0%, rgba(129, 140, 248, 0.05) 100%); border: 1px solid rgba(var(--fg-rgb), 0.09); border-radius: 20px; padding: 3rem 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
         <div style="max-width: 620px;">
           <span class="section-tag" style="margin-bottom: 0.75rem;">Studi Kasus & Portofolio</span>
-          <h2 style="font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 700; margin-bottom: 0.75rem; color: #fff;">Lihat Hasil Pengerjaan & Solusi Nyata</h2>
+          <h2 style="font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">Lihat Hasil Pengerjaan & Solusi Nyata</h2>
           <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">
             Pelajari bagaimana kami mengurai kendala di lapangan, termasuk sistem manajemen stok pintar yang sukses <strong>menurunkan kesalahan belanja barang sebesar 30%</strong> pada jaringan 12.000+ produk.
           </p>

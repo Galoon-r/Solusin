@@ -152,6 +152,8 @@ function initCanvasEffect() {
     // Read colors from CSS custom properties for dynamic theming
     const computed = getComputedStyle(document.documentElement);
     const accent1 = computed.getPropertyValue('--color-accent-1').trim() || '#818cf8';
+    const nodeColor = computed.getPropertyValue('--canvas-node').trim() || 'rgba(255, 255, 255, 0.7)';
+    const lineRgb = computed.getPropertyValue('--canvas-line-rgb').trim() || '168, 140, 255';
 
     // Update & draw nodes
     for (let i = 0; i < nodes.length; i++) {
@@ -182,7 +184,7 @@ function initCanvasEffect() {
       // Draw node dot with glow
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+      ctx.fillStyle = nodeColor;
       ctx.shadowBlur = 10;
       ctx.shadowColor = accent1;
       ctx.fill();
@@ -202,7 +204,7 @@ function initCanvasEffect() {
 
         if (dist < maxDist) {
           const alpha = (1 - dist / maxDist) * 0.35;
-          ctx.strokeStyle = `rgba(168, 140, 255, ${alpha})`;
+          ctx.strokeStyle = `rgba(${lineRgb}, ${alpha})`;
           ctx.beginPath();
           ctx.moveTo(nodes[i].x, nodes[i].y);
           ctx.lineTo(nodes[j].x, nodes[j].y);

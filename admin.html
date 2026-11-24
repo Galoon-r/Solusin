@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Daftar Masalah & Konsultasi Masuk</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=5">
+  <style>
+    .admin-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: calc(var(--nav-height) + 2rem) 2rem 5rem;
+    }
+
+    .admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .leads-table-wrapper {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 1.15rem 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.92rem;
+    }
+
+    th {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .badge-client {
+      display: inline-block;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: rgba(129, 140, 248, 0.15);
+      color: var(--color-accent-1);
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header / Navigation Bar -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">
+        <span class="logo-text">Solusin</span>
+      </a>
+      <div class="header-actions">
+        <a href="index.html" class="btn btn-secondary btn-pill">Lihat Website</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-container">
+    <div class="admin-header">
+      <div>
+        <span class="section-tag">Internal Dashboard</span>
+        <h1 style="font-size: 1.85rem; font-weight: 700; margin-top: 0.4rem;">Data Masalah & Calon Klien</h1>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.3rem;">Daftar konsultasi yang masuk dari form landing page secara real-time dari database SQLite.</p>
+      </div>
+      <button id="refreshBtn" class="btn btn-primary btn-pill">
+        <span>Refresh Data</span>
+      </button>
+    </div>
+
+    <div class="leads-table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Waktu Masuk</th>
+            <th>Kategori</th>
+            <th>Nama / Bisnis</th>
+            <th>Kontak (WA / Email)</th>
+            <th>Masalah yang Dihadapi</th>
+            <th>Ekspektasi Solusi</th>
+          </tr>
+        </thead>
+        <tbody id="leadsTableBody">
+          <tr>
+            <td colspan="6" class="empty-state">Memuat data dari server backend...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script>
+    async function loadConsultations() {
+      const tbody = document.getElementById('leadsTableBody');
+      try {
+        const response = await fetch('/api/consultations');
+        const resData = await response.json();
+
+        if (resData.success && resData.data.length > 0) {
+          tbody.innerHTML = resData.data.map(item => `
+            <tr>
+              <td style="color: var(--text-muted); white-space: nowrap;">${new Date(item.created_at).toLocaleString('id-ID')}</td>
+              <td><span class="badge-client">${item.client_type.toUpperCase()}</span></td>
+              <td style="font-weight: 600; color: #fff;">${item.client_name}</td>
+              <td>
+                <a href="https://wa.me/${item.client_contact.replace(/\D/g,'')}" target="_blank" style="color: var(--color-accent-3); display: block; margin-bottom: 2px;">
+                  📱 ${item.client_contact}
+                </a>
+                <span style="color: var(--text-muted); font-size: 0.85rem;">✉️ ${item.client_email}</span>
+              </td>
+              <td style="max-width: 320px; line-height: 1.5;">${item.problem_description}</td>
+              <td style="max-width: 260px; color: var(--text-muted); line-height: 1.5;">${item.expected_outcome || '-'}</td>
+            </tr>
+          `).join('');
+        } else {
+          tbody.innerHTML = '<tr><td colspan="6" class="empty-state">Belum ada data konsultasi yang masuk. Silakan coba isi formulir di halaman utama.</td></tr>';
+        }
+      } catch (err) {
+        console.error(err);
+        tbody.innerHTML = '<tr><td colspan="6" class="empty-state" style="color: #f87171;">Gagal terhubung ke API backend (/api/consultations).</td></tr>';
+      }
+    }
+
+    document.getElementById('refreshBtn').addEventListener('click', loadConsultations);
+    loadConsultations();
+  </script>
+</body>
+
+</html>
